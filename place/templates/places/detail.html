@@ -1,0 +1,22 @@
+{% extends 'places/base.html' %}
+{% block content %}
+<html>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card card-signin my-4">
+                    <div class="card-body">
+                        <div class="container" style="background: rgb(249, 249, 250);">
+                            <h1>{{ place.title }}</h1>
+                            <p>{{ place.content.html }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+{% endblock %}

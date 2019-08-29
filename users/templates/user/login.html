@@ -1,0 +1,28 @@
+{% extends 'user/base.html' %}
+{% block content %}
+<form method="POST" action="{% url "login" %}">
+    {% csrf_token %}
+    <div class="card-body">
+        <h5 class="card-title text-center">Login</h5>
+        <div class="form-signin">
+            <div class="form-label-group">
+                <input type="text" id="username" name="username" class="form-control" placeholder="Username" required
+                    autofocus>
+                <label for="username">Username</label>
+            </div>
+
+            <div class="form-l+abel-group">
+                <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password"
+                    required>
+                <label for="inputPassword">Password</label>
+            </div>
+            <button class="btn btn-lg btn-dark btn-block text-uppercase" type="submit">Sign in</button>            
+            <hr class="my-4">
+            <a class="btn btn-outline-danger btn-lg btn-block" href="{% url 'social:begin' 'google-oauth2' %}"><i
+                    class="fab fa-google mr-2"></i> Sign in with Google</a>
+                    <hr class="my-4">
+            <a href="{% url 'signup' %}"
+                    class="btn btn-outline-primary btn-block">Create your Ninja-Crawler account</a>
+        </div>
+    </div>
+{% endblock %}

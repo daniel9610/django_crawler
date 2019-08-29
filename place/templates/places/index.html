@@ -1,0 +1,37 @@
+{% extends 'places/base.html' %}
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card card-signin my-4">
+                <div class="card-body">
+  <h2>Scraped sites list</h2>
+  <p>Use the crawler seeker to scraped e-commerce pages or diferent public content web sites, save the html and results in your database:</p>
+  <table class="table table-striped">
+    <thead class="thead-dark">
+      <tr>
+        <th>Title</th>
+        <th>Domain</th>
+        <th>Created at</th>
+        <th>Content</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for item in cr_sites %}
+      <tr>
+        <td>{{ item.title }}</td>
+        <td>{{ item.domain }}</td>
+        <td>{{ item.created_at }}</td>
+        <td><a type="button" class="btn btn-outline-primary btn-block" href="/site_detail/{{item.id}}/">Show</a></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+{% endblock%}

@@ -1,0 +1,33 @@
+{% extends 'places/base.html' %}
+{% block content %}
+<html>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card card-signin my-4">
+                    <div class="card-body">
+                        <h2>Crawler seeker</h2>
+                        <div class="form">
+                            <form id="SiteForm" class="form-horizontal" method="POST">
+                                {% csrf_token %}
+                                {{form.as_p }}
+                                <div class="form-group ">
+                                    <div class="col-sm-offset-2 col-sm-10">
+                                        <button type="submit" class="btn btn-lg btn-dark">Submit</button>
+                                    </div>
+                                </div>
+                            </form>
+                            <h2>{{ site_title }}</h2>
+                            <h4>{{ site_url }}</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+{% endblock %}
+
+</html>

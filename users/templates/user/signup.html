@@ -1,0 +1,49 @@
+{% extends 'user/base.html'%}
+{% block content %}
+
+{% if error %}
+    <p class="alert aler-danger">{{ error }}</p>
+{% endif %}
+<form method="POST" action="{% url "signup" %}">
+    {% csrf_token %}
+    <div class="card-body">
+        <h5 class="card-title text-center">Sign Up</h5>
+        <div class="form-signin">
+            <div class="form-label-group">
+                <strong><label for="username">Username</label></strong>
+                <input type="text" id="username" name="username" class="form-control" required autofocus>
+            </div>
+
+            <div class="form-label-group">
+                <strong><label for="first_name">First name</label></strong>
+                <input type="text" id="first_name" name="first_name" class="form-control" required autofocus>
+            </div>
+
+            <div class="form-label-group">
+                <strong><label for="last_name">Last name</label></strong>
+                <input type="text" id="last_name" name="last_name" class="form-control" required autofocus>
+            </div>
+
+            <div class="form-label-group">
+                <strong><label for="email">Email address</label></strong>
+                <input type="email" id="email" name="email" class="form-control" required autofocus>
+            </div>
+
+            <div class="form-label-group">
+                <strong><label for="password">Password</label></strong>
+                <input type="password" id="password" name="password" class="form-control"
+                    placeholder="At least 7 characters" required> 
+            </div>
+
+            <div class="form-label-group">
+                <strong><label for="password_confirmation">Confirm your password</label></strong>
+                <input type="password" id="password_confirmation" name="password_confirmation" class="form-control" required autofocus>
+            </div><br>
+
+            <button class="btn btn-lg btn-dark btn-block text-uppercase" type="submit">¡REGISTER!</button>
+            <hr class="my-4">
+            Already have an account?<a href="{% url 'login' %}"><i
+                    class="fab fa-google mr-2"></i>Sign-In</a>
+            </div>
+    </div>
+{% endblock %}
